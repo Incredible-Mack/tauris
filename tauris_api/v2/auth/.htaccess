@@ -1,0 +1,23 @@
+RewriteEngine On 
+
+RewriteRule ^tour tour.php [NC,L]
+RewriteRule ^signup signup.php [NC,L]
+RewriteRule ^login login.php [NC,L]
+RewriteRule ^desktop-login desktop-login.php [NC,L]
+RewriteRule ^facial-login facial-login.php [NC,L]
+RewriteRule ^user-static-data user-static-data.php [NC,L]
+RewriteRule ^activate activate.php [NC,L]
+RewriteRule ^resend-activation resend-activation.php [NC,L]
+RewriteRule ^logout logout.php [NC,L]
+RewriteRule ^forgot-password forgot-password.php [NC,L]
+RewriteRule ^reset-password reset-password.php [NC,L]
+RewriteRule ^update-password update-password.php [NC,L]
+RewriteRule ^account-detail/([0-9a-zA-Z_-]*)$ account-detail.php?id=$1 [NC,L]
+RewriteRule ^update-account update-account.php [NC,L]
+RewriteRule ^update-photo update-photo.php [NC,L]
+RewriteRule ^update-notification update-notification.php [NC,L]
+RewriteRule ^close-account close-account.php [NC,L]
+RewriteRule ^test test.php [NC,L]
+RewriteRule ^vr-login vr-login.php [NC,L]
+
+

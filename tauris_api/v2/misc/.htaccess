@@ -1,0 +1,11 @@
+RewriteEngine On 
+
+RewriteRule ^move-questions move-questions.php [NC,L]
+RewriteRule ^merge-elements merge-elements.php [NC,L]
+
+RewriteRule ^lookup/([0-9a-zA-Z_-]*)$ lookup.php?id=$1 [NC,L]
+RewriteRule ^create-pricelist create-pricelist.php [NC,L]
+RewriteRule ^cleanup-components cleanup-components.php [NC,L]
+RewriteRule ^cleanup-elements cleanup-elements.php [NC,L]
+RewriteRule ^sync-elements sync-elements.php [NC,L]
+RewriteRule ^find-duplicate-in-column find-duplicate-in-column.php [NC,L]

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Church Registration</title>
+</head>
+<body>
+  <h2>New Church Registration</h2>
+  <form id="churchRegistrationForm" action="submit_registration.php" method="post">
+    <label>
+      <input type="radio" name="churchType" value="Newly Pioneered Church" required> Newly Pioneered Church
+    </label><br>
+    <label>
+      <input type="radio" name="churchType" value="Teenagers Church" required> Teenagers Church
+    </label><br>
+    <label>
+      <input type="radio" name="churchType" value="Youth Church" required> Youth Church
+    </label><br>
+
+    <div id="dropdownContainer" style="display: none;">
+      <label for="churchDropdown">Church Options:</label>
+      <select id="churchDropdown" name="churchOption">
+        <option value="CHURCH SPLIT">CHURCH SPLIT</option>
+        <option value="HEALING STREAMS">HEALING STREAMS</option>
+        <option value="ROR DISTRIBUTION">ROR DISTRIBUTION</option>
+        <option value="LTM">LTM</option>
+        <option value="GLOBAL MISSION MANDATE">GLOBAL MISSION MANDATE</option>
+        <option value="OTHERS">OTHERS</option>
+      </select><br>
+
+      <div id="othersContainer" style="display: none;">
+        <label for="otherChurch">If others, kindly specify:</label>
+        <input type="text" id="otherChurch" name="otherChurchName">
+      </div>
+    </div>
+
+    <label for="churchName">Church Name:</label>
+    <input type="text" id="churchName" name="churchName" required><br>
+
+    <label for="parentChurch">Parent Church:</label>
+    <select id="parentChurch" name="parentChurch" required>
+      <option value="Parent Church 1">Parent Church 1</option>
+      <option value="Parent Church 2">Parent Church 2</option>
+      <option value="Parent Church 3">Parent Church 3</option>
+      <!-- Add more main churches here -->
+    </select><br>
+
+    <label for="churchVenue">Church Venue:</label>
+    <select id="churchVenue" name="churchVenue" required>
+      <option value="Same as Parent Church">Same as Parent Church</option>
+      <option value="Different Venue">Different Venue</option>
+    </select><br>
+
+    <div id="addressContainer" style="display: none;">
+      <label for="churchAddress">Church Address:</label>
+      <input type="text" id="churchAddress" name="churchAddress"><br>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city"><br>
+
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state"><br>
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country"><br>
+    </div>
+
+    <label for="pastor">Select the Pastor/Coordinator of the Church:</label>
+    <select id="pastor" name="pastor" required>
+      <option value="Pastor 1">Pastor 1</option>
+      <option value="Pastor 2">Pastor 2</option>
+      <option value="Pastor 3">Pastor 3</option>
+      <!-- Add more pastors here -->
+    </select><br>
+
+    <button type="submit">SUBMIT</button>
+  </form>
+
+  <script>
+    const churchTypeRadios = document.querySelectorAll('input[name="churchType"]');
+    const dropdownContainer = document.getElementById('dropdownContainer');
+    const churchDropdown = document.getElementById('churchDropdown');
+    const othersContainer = document.getElementById('othersContainer');
+    const othersInput = document.getElementById('otherChurch');
+    const churchVenueSelect = document.getElementById('churchVenue');
+    const addressContainer = document.getElementById('addressContainer');
+    const churchAddress = document.getElementById('churchAddress');
+    const city = document.getElementById('city');
+    const state = document.getElementById('state');
+    const country = document.getElementById('country');
+
+    churchTypeRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'Newly Pioneered Church') {
+          dropdownContainer.style.display = 'block';
+          addressContainer.style.display = 'none';
+          churchAddress.removeAttribute('required');
+          city.removeAttribute('required');
+          state.removeAttribute('required');
+          country.removeAttribute('required');
+        } else {
+          dropdownContainer.style.display = 'none';
+        }
+      });
+    });
+
+    churchDropdown.addEventListener('change', function() {
+      if (this.value === 'OTHERS') {
+        othersContainer.style.display = 'block';
+      } else {
+        othersContainer.style.display = 'none';
+        othersInput.value = '';
+      }
+    });
+
+    churchVenueSelect.addEventListener('change', function() {
+      if (this.value === 'Different Venue') {
+        addressContainer.style.display = 'block';
+        churchAddress.setAttribute('required', 'required');
+        city.setAttribute('required', 'required');
+        state.setAttribute('required', 'required');
+        country.setAttribute('required', 'required');
+      } else {
+        addressContainer.style.display = 'none';
+        churchAddress.removeAttribute('required');
+        city.removeAttribute('required');
+        state.removeAttribute('required');
+        country.removeAttribute('required');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .removed-element {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="myElementxxx">This is a div element xxx.</div>
+  <div id="myElement">This is a div element.</div>
+  <div id="myElementyy">This is a div element yyy.</div>
+  <button onclick="removeAndStore()">Remove and Store</button>
+  <button onclick="undoRemove()">Undo Remove</button>
+
+  <script>
+    let removedElementData = null;
+
+    function removeAndStore() {
+      const myElement = document.getElementById('myElement');
+      if (myElement) {
+        // Store the removed element data along with the ID
+        removedElementData = {
+          id: myElement.id,
+          parent: myElement.parentNode,
+          nextSibling: myElement.nextSibling,
+          content: myElement.innerHTML
+        };
+        // Remove the element
+        myElement.remove();
+      }
+    }
+
+    function undoRemove() {
+      if (removedElementData) {
+        // Create a new element with the stored data
+        const restoredElement = document.createElement('div');
+        restoredElement.id = removedElementData.id; // Restore the original ID
+        restoredElement.innerHTML = removedElementData.content;
+        // Insert the element back into the DOM
+        removedElementData.parent.insertBefore(restoredElement, removedElementData.nextSibling);
+        // Reset the removedElementData variable
+        removedElementData = null;
+      }
+    }
+  </script>
+</body>
+</html>
+
+-->

@@ -1,0 +1,250 @@
+Organization
+
+Contract
+organization_id
+budget
+start_date
+end_date
+created_at
+updated_at
+
+Team
+hourly_rate
+created_at
+updated_at
+
+Project
+contract id
+Project Title
+Project Description
+Project Manager
+Project_budget
+start_date
+end_date
+created_at
+updated_at
+duration
+
+Task
+project id
+task Title
+task Description
+team_member : array
+start date
+end date
+created_at
+updated_at
+duration
+estimated_workhour
+approved_workhour
+actual_workhour
+task_status
+
+Contract documents
+id
+contract_id
+added_by
+created_at
+updated_at
+
+Project files
+id
+project_id
+task_id
+created_at
+updated_at
+
+Project note
+id
+project_id
+task_id
+
+Project note category
+note category name
+Project note category description
+Project note category slug
+
+Project Communication
+Project note category name
+Project note category description
+Project note category slug
+
+
+Payment : tax, and other details
+
+Logout
+profile
+update password
+
+
+Team member work history -: rate, hours, task, date
+
+Project work history -: per staff,
+
+
+####### Naming convention:   use - (dash instead of underscore)
+
+
+
+
+
+
+General
+remove search from header
+USA DATE: "m-d-Y"
+change my profile to account
+change Team in MAIN MENU to Manage TEAM
+
+
+##ORGANIZATION changes to ACCOUNT
+##remove delete
+##CHANGE transaction history TO CONTRACTS
+##ADD PROJECT under contracts
+##change the profile picture to logo
+##remove email under logo
+##remove name before the breadcrumb
+##comment the purple premium
+##Add a button that links to contract
+
+
+CONTRACT
+##change contact to contract ID : #200294
+##change contact designation to contract date
+
+##change budget
+
+##budget  - info
+##Add budget spent - danger
+##Add budget balance - success
+
+Spending progress
+
+##Remove Add contract
+##Add contract status under contract date [pending= warning, active = success ]
+
+CONTRACT DETAILS
+##remove arrow beside budget
+
+##Add a card tab under - Contract Asset
+
+##Tab to contain : Disbursement, Documents, Notes (add icons)
+
+##let the dot represent contract status
+
+DISBURSEMENT TAB
+Reference - link to invoice
+Amount
+Mode - Check,wire,card
+Date
+
+DOCUMENT
+Document Name
+Date of creation
+
+NOTES
+Title
+content
+added_by
+last updated
+
+
+
+
+
+PROJECT
+
+#Top Dashboard
+#---  Project
+#---  budget
+#---  spending
+#---  balance
+
+ON THE CARD
+##remove the top logo
+
+##Add 3 lines
+
+##Project Manager
+##Contract id 
+##Budget:
+##Status
+
+##Start date and end date
+
+##Project Progress
+##move team above progress and name it - Team
+
+##Change Project Task to View Project
+
+##change Project by status to project list
+
+##add project list - description [ This page contains all the project for this account ]
+
+
+PROJECT TASK
+Should have Project Name and project Description
+Add tool tip
+
+USE CARD TABS
+Name of Tab = Project Asset
+
+
+Tasks = should have both list and card [ Card = Default]
+Files  
+Notes 
+Team 
+View Grann Chart = [Grann Chart available soon]
+
+
+TASK VIEW
+add task status
+
+task name
+project description
+
+
+Task Assets
+Assigned [Team]
+files 
+note
+
+
+
+MANAGE TEAM
+
+Change ADD Team to Add New
+--Name
+--Email
+--Phone
+--Designation
+--Status
+--action [Edit, View]
+
+
+TEAM VIEW
+Tasks History
+Assigned, Completed , In progress , Pending
+
+
+CARD TAB - User Activity
+Completed,In progress,Pending, Payment History, Time Sheet
+
+
+TIME SHEET
+---Clock 
+
+
+
+USER TASK ASSETS
+Task Note
+File
+
+
+
+
+REPORTS
+
+--- Project Report
+hour
+budget
+Project health

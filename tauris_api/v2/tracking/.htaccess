@@ -1,0 +1,4 @@
+RewriteEngine On 
+RewriteRule ^static static.php [NC,L]
+RewriteRule ^dynamic dynamic.php [NC,L]
+RewriteRule ^engage engage.php [NC,L]
